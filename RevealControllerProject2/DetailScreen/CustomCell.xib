@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="CustomCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA2-fz-RiJ">
+                        <rect key="frame" x="132" y="8" width="167" height="31"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-20%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7a-ze-EkM">
+                        <rect key="frame" x="271" y="57" width="41" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tu-LU-0gW">
+                        <rect key="frame" x="132" y="57" width="31" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birthday08.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-qU-RIG">
+                        <rect key="frame" x="2" y="2" width="122" height="76"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="76" id="P1j-4v-i7i"/>
+                            <constraint firstAttribute="width" constant="122" id="kEv-8y-pdA"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="0tu-LU-0gW" secondAttribute="bottom" constant="-7" id="OKd-HH-yuf"/>
+                    <constraint firstItem="B5l-qU-RIG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-6" id="R0j-zU-RUK"/>
+                    <constraint firstItem="H7a-ze-EkM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Ryr-XR-Keg"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="H7a-ze-EkM" secondAttribute="bottom" constant="-7" id="Tvp-HV-Kd4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kA2-fz-RiJ" secondAttribute="trailing" constant="13" id="ecB-hL-W0U"/>
+                    <constraint firstItem="0tu-LU-0gW" firstAttribute="leading" secondItem="B5l-qU-RIG" secondAttribute="trailing" constant="8" id="oXK-hS-IB7"/>
+                    <constraint firstItem="kA2-fz-RiJ" firstAttribute="leading" secondItem="B5l-qU-RIG" secondAttribute="trailing" constant="8" id="pJv-RJ-rf0"/>
+                    <constraint firstItem="kA2-fz-RiJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="qaW-Gq-NDh"/>
+                    <constraint firstItem="B5l-qU-RIG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="ve2-sn-7u0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="imgViewThumbnail" destination="B5l-qU-RIG" id="MwQ-vb-rTb"/>
+                <outlet property="labelName" destination="kA2-fz-RiJ" id="lDI-sB-jTu"/>
+                <outlet property="labelPrice" destination="0tu-LU-0gW" id="mS3-Oh-Wi4"/>
+                <outlet property="labelSaleOff" destination="H7a-ze-EkM" id="Thl-eZ-YD0"/>
+            </connections>
+            <point key="canvasLocation" x="600" y="300"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="birthday08.JPG" width="150" height="150"/>
+    </resources>
+</document>
