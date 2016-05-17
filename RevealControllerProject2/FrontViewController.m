@@ -16,9 +16,11 @@
 #import "NetworkManager.h"
 #import "RearViewController.h"
 @interface FrontViewController ()<UITableViewDataSource, UITableViewDelegate>
+{
+    NSMutableArray *arr_data;
+}
 @property (nonatomic, strong) DetailScreen *detailScreen;
-@property (weak, nonatomic) IBOutlet UIImageView *image;
-@property (nonatomic, strong) NSMutableArray *arr_data;
+@property (strong, nonatomic) IBOutlet UIImageView *image;
 @property (nonatomic, weak) NSString *desLink ;
 @end
 
@@ -31,6 +33,9 @@
         
    self.linkFrontView = @"http://mp3.zing.vn/the-loai-album.html";
     }
+    if (self.titleHeader == nil) {
+        self.titleHeader = @"Album";
+    }
     
     else;
     //NSLog(@"%@",self.linkFrontView);
@@ -38,11 +43,11 @@
     [self loadHTML];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.title = NSLocalizedString(@"Zing Radio", nil);
+//    self.title = NSLocalizedString(@"Zing Radio", nil);
     
     SWRevealViewController *revealController = [self revealViewController];
     
-    [self.navigationController.navigationBar addGestureRecognizer:revealController.panGestureRecognizer];
+//    [self.navigationController.navigationBar addGestureRecognizer:revealController.panGestureRecognizer];
     
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
                                                                          style:UIBarButtonItemStyleBordered
@@ -55,22 +60,20 @@
     [super viewWillLayoutSubviews];
     [self loadHTML];
     
-    CGFloat statusNavigationBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.bounds.size.height;
-  //  CGRect tableViewRec = CGRectMake(0,statusNavigationBarHeight, self.view.bounds.size.width, self.view.bounds.size.height);
-    
-    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zing2.png"]];
-    image.frame = CGRectMake(10, statusNavigationBarHeight+10, self.view.bounds.size.width-20, (self.view.bounds.size.height-20)/3
-                             );
-    
-    [self.view addSubview:image ];
-    self.tableView.frame = CGRectMake(10, (self.view.bounds.size.height-20)/3+10, self.view.bounds.size.width-20, (self.view.bounds.size.height-20)*2/3);
+//    CGFloat statusNavigationBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.bounds.size.height;
+//    _image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zing2.png"]];
+    _image.image = [UIImage imageNamed:@"zing2.png"];
+//    _image.frame = CGRectMake(10, statusNavigationBarHeight+10, self.view.bounds.size.width-20, (self.view.bounds.size.height-20)/3
+//                             );
+//   [self.tableView addSubview:_image ];
+//    self.tableView.frame = CGRectMake(10, (self.view.bounds.size.height-20)/3+10, self.view.bounds.size.width-20, (self.view.bounds.size.height-20)*2/3);
     
 }
 
 -(void) loadHTML{
     [[NetworkManager shareManager] GetMusicFromLink:self.linkFrontView
                                         OnComplete:^(NSArray *items) {
-        self.arr_data = [[NSMutableArray alloc] initWithArray:items];
+        arr_data = [[NSMutableArray alloc] initWithArray:items];
         
         [self.tableView reloadData]; // Tải lại table khi dữ liệu đc parse về.
         
@@ -86,13 +89,13 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
-    return @"Phim đang chiếu";
+    return _titleHeader;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-     NSLog(@"%lu",(unsigned long)self.arr_data.count);
+//     NSLog(@"%lu",(unsigned long)arr_data.count);
     
-    return self.arr_data.count;
+    return arr_data.count;
    
 
 }
@@ -105,7 +108,7 @@
                                       reuseIdentifier:@"Cell"];
     }
    
-    PhimObj *obj = self.arr_data[indexPath.row];
+    PhimObj *obj = arr_data[indexPath.row];
     cell.textLabel.text = obj.tenPhim;
     
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:obj.linkAnh]];
@@ -122,7 +125,7 @@
     }
     
     PhimObj *phimObj = [PhimObj new];
-    phimObj = self.arr_data[indexPath.row];
+    phimObj = arr_data[indexPath.row];
     
    // NSLog(@"Push screen to %ld ",(long)indexPath.row);
     

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
 @interface PlayScreen : UIViewController
 
-@property(nonatomic, strong) NSString *stringNameFood;
+@property(nonatomic, strong) NSString *stringNameFood,*strImage;
+@property (weak, nonatomic) IBOutlet UIView *imgPlay;
+@property (weak, nonatomic) IBOutlet UISlider *sliderShowCurrentTime;
 
 
 @property(nonatomic,strong) NSString *linkMp3;

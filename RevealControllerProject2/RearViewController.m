@@ -1,5 +1,5 @@
 /*
-
+ 
  Copyright (c) 2013 Joan Lluch <joan.lluch@sweetwilliamsl.com>
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,8 +19,8 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-
-*/
+ 
+ */
 
 #import "RearViewController.h"
 
@@ -31,6 +31,7 @@
 @interface RearViewController()
 {
     NSInteger _presentedRow;
+    FrontViewController *frontViewController;
 }
 @property (nonatomic, weak) NSString *desLink;
 @end
@@ -42,8 +43,8 @@
 
 - (void)viewDidLoad
 {
-	[super viewDidLoad];
-	
+    [super viewDidLoad];
+    
     // We determine whether we have a grand parent SWRevealViewController, this means we are at least one level behind the hierarchy
     SWRevealViewController *parentRevealController = self.revealViewController;
     SWRevealViewController *grandParentRevealController = parentRevealController.revealViewController;
@@ -52,10 +53,17 @@
                                                                          style:UIBarButtonItemStyleBordered
                                                                         target:grandParentRevealController
                                                                         action:@selector(revealToggle:)];
+    
+    SWRevealViewController *revealController = self.revealViewController;
+    
+    
+    UIViewController *newFrontController = nil;
+    frontViewController = [[FrontViewController alloc] init];
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+    
     self.desLink = nil;
-
-        self.navigationItem.title = @"Zing mp3";
-   
+    self.navigationItem.title = @"List Chanel";
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -64,6 +72,7 @@
     
     SWRevealViewController *grandParentRevealController = self.revealViewController.revealViewController;
     grandParentRevealController.bounceBackOnOverdraw = NO;
+    [frontViewController.view setUserInteractionEnabled:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -72,6 +81,7 @@
     
     SWRevealViewController *grandParentRevealController = self.revealViewController.revealViewController;
     grandParentRevealController.bounceBackOnOverdraw = YES;
+    [frontViewController.view setUserInteractionEnabled:YES];
 }
 
 
@@ -79,52 +89,52 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 5;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString *cellIdentifier = @"Cell";
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	NSInteger row = indexPath.row;
+    static NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    NSInteger row = indexPath.row;
     
-	if (nil == cell)
-	{
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+    if (nil == cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                       reuseIdentifier:cellIdentifier];
-	}
-	
+    }
+    
     NSString *text = nil;
     UIImage *cellImage;
-	if (row == 0)
-	{
-		text = @"Hot Music";
+    if (row == 0)
+    {
+        text = @"Hot Music";
         cellImage = [UIImage imageNamed:@"1.jpg"];
-  
-	}
-	else if (row == 1)
-	{
+        
+    }
+    else if (row == 1)
+    {
         text = @"Album";
         cellImage = [UIImage imageNamed:@"2.jpg"];
-	}
-	else if (row == 2)
-	{
-		text = @"Nghệ sĩ";
+    }
+    else if (row == 2)
+    {
+        text = @"Nghệ sĩ";
         cellImage = [UIImage imageNamed:@"3.jpg"];
-
-	}
-	else if (row == 3)
-	{
-		text = @"BXH";
+        
+    }
+    else if (row == 3)
+    {
+        text = @"BXH";
         cellImage = [UIImage imageNamed:@"4.jpg"];
-
-	}
+        
+    }
     else if (row == 4)
-	{
-		text = @"Top 100";
+    {
+        text = @"Top 100";
         cellImage = [UIImage imageNamed:@"5.jpg"];
-
-	}
+        
+    }
     
     cell.textLabel.text = NSLocalizedString( text, nil );
     cell.imageView.image = cellImage;
@@ -137,7 +147,7 @@
     
     SWRevealViewController *revealController = self.revealViewController;
     
-    // selecting row
+    
     NSInteger row = indexPath.row;
     
     if ( row == _presentedRow )
@@ -145,42 +155,47 @@
         [revealController setFrontViewPosition:FrontViewPositionLeft animated:YES];
         return;
     }
-
+    
     // otherwise we'll create a new frontViewController and push it with animation
-
+    
     UIViewController *newFrontController = nil;
-
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
     if (row == 0) // Tạo các Controller mới tương ứng.
     {
-        FrontViewController *frontViewController = [[FrontViewController alloc] init];
+        frontViewController = [[FrontViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
         frontViewController.linkFrontView = @"http://mp3.zing.vn/the-loai-album.html";
+        frontViewController.titleHeader = @"Hot Music";
     }
     
     else if (row == 1)
     {
-        FrontViewController *frontViewController = [[FrontViewController alloc] init];
+        frontViewController = [[FrontViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+        frontViewController.titleHeader = @"Hot Music";
         frontViewController.linkFrontView = @"http://mp3.zing.vn/the-loai-video.html";
     }
     else if (row == 2)
     {
-        FrontViewController *frontViewController = [[FrontViewController alloc] init];
+        frontViewController = [[FrontViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
         frontViewController.linkFrontView = @"http://mp3.zing.vn/the-loai-album/Han-Quoc/IWZ9Z08W.html";
+        frontViewController.titleHeader = @"Hot Music";
     }
     else if (row == 3)
     {
-        FrontViewController *frontViewController = [[FrontViewController alloc] init];
+        frontViewController = [[FrontViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
         frontViewController.linkFrontView =@"http://mp3.zing.vn/the-loai-album/Au-My/IWZ9Z08O.html";
+        frontViewController.titleHeader = @"Hot Music";
     }
-
+    
     else if ( row == 4 )
     {
-        FrontViewController *frontViewController = [[FrontViewController alloc] init];
+        frontViewController = [[FrontViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
         frontViewController.linkFrontView =@"http://mp3.zing.vn/the-loai-album/Han-Quoc/IWZ9Z08W.html";
+        frontViewController.titleHeader = @"Hot Music";
     }
     
     [revealController pushFrontViewController:newFrontController animated:YES];

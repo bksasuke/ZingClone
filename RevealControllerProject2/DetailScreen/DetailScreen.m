@@ -14,8 +14,11 @@
 
 
 @interface DetailScreen () <UITableViewDataSource,UITableViewDelegate>
+{
+    NSMutableArray *arr_data;
+}
 @property (weak, nonatomic) IBOutlet UIImageView *image;
-@property (nonatomic, strong) NSMutableArray *arr_data;
+//@property (nonatomic, strong) NSMutableArray *arr_data;
 @property (nonatomic, weak) NSString *desLink ;
 
 @property (nonatomic,strong) PlayScreen *PlayScreen;
@@ -61,12 +64,12 @@
 }
 -(void) getPlaylist{
     [[NetworkManager shareManager] GetPlaylistFromLink:self.stringLinkDetail
-                                         OnComplete:^(NSArray *items) {
-                                             self.arr_data = [[NSMutableArray alloc] initWithArray:items];
-                                             
-                                         } fail:^{
-                                             NSLog(@"loi");
-                                         }];
+                                            OnComplete:^(NSArray *items) {
+                                                arr_data = [[NSMutableArray alloc] initWithArray:items];
+                                                
+                                            } fail:^{
+                                                NSLog(@"loi");
+                                            }];
     
 }
 
@@ -79,7 +82,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arr_data.count;
+    return arr_data.count;
     
 }
 
@@ -90,31 +93,29 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:@"Cell"];
     }
-    
-    PhimObj *obj = self.arr_data[indexPath.row];
-    cell.textLabel.text = obj.tenPhim;
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.stringLinkImage]];
-    cell.imageView.image = [UIImage imageWithData:data]; // Lấy tạm ảnh của frontview
-    
-    cell.detailTextLabel.text = obj.linkChitiet; //Link của PlayScreen
-    cell.textLabel.font = [UIFont systemFontOfSize:16.0];
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:9];
+    if (arr_data.count >0) {
+        PhimObj *obj = arr_data[indexPath.row];
+        cell.textLabel.text = obj.tenPhim;
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.stringLinkImage]];
+        cell.imageView.image = [UIImage imageWithData:data]; // Lấy tạm ảnh của frontview
+//        cell.detailTextLabel.text = obj.linkChitiet; //Link của PlayScreen
+        cell.textLabel.font = [UIFont systemFontOfSize:16.0];
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:9];
+    }
     return cell ;}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
-}
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!self.PlayScreen) {
-        self.PlayScreen = [PlayScreen new]; }
-   
+    //    if (!self.PlayScreen) {
+    self.PlayScreen = [PlayScreen new];
+    //}
+    
     PhimObj *phim = [ PhimObj new];
-
-    phim = self.arr_data[indexPath.row];
+    
+    phim = arr_data[indexPath.row];
     self.PlayScreen.linkMp3 = phim.linkChitiet;
+    _PlayScreen.strImage = _stringLinkImage;
     [self.navigationController pushViewController:self.PlayScreen animated:YES];
-
+    
 }
 @end

@@ -17,7 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTimeElapsed;
 @property (weak, nonatomic) IBOutlet UILabel *labelTimeDuration;
-@property (weak, nonatomic) IBOutlet UISlider *sliderShowCurrentTime;
+//@property (weak, nonatomic) IBOutlet UISlider *sliderShowCurrentTime;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlayPause;
 @property (weak, nonatomic) IBOutlet UIButton *btnStop;
 
@@ -45,10 +45,33 @@ BOOL isPaused;
     //    [self createAnimationSpeakerImage];
     [self createActivityIndicatorView];
     [self enableButtonPlayStopSlider:NO];
-    
-    
+    [self setRotateImage];
 }
 
+- ( void) setRotateImage{
+    
+    _imgPlay.layer.cornerRadius = _imgPlay.frame.size.width/2;
+    UIGraphicsBeginImageContext(self.view.frame.size);
+//    [[UIImage imageNamed:@"image.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.strImage]];
+    image = [UIImage imageWithData:data];
+    _imgPlay.backgroundColor = [UIColor colorWithPatternImage:image];
+//    _sliderShowCurrentTime.markColor = [UIColor colorWithWhite:1 alpha:0.5];
+//    _sliderShowCurrentTime.selectedBarColor = [UIColor grayColor];
+//    _sliderShowCurrentTime.unselectedBarColor = [UIColor blackColor];
+    
+    UIImage *minImage = [[UIImage imageNamed:@"slider-track-fill.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)];
+    UIImage *maxImage = [UIImage imageNamed:@"slider-track.png"];
+    UIImage *thumbImage = [UIImage imageNamed:@"slider-cap.png"];
+    
+    
+    [[UISlider appearance] setMaximumTrackImage:maxImage forState:UIControlStateNormal];
+    [[UISlider appearance] setMinimumTrackImage:minImage forState:UIControlStateNormal];
+    [[UISlider appearance] setThumbImage:thumbImage forState:UIControlStateNormal];
+    [[UISlider appearance] setThumbImage:thumbImage forState:UIControlStateHighlighted];
+}
 
 -(void) getXml{ // step 1 : trả về mảng các đối tượng có link XML
     [[NetworkManager shareManager] GetXmlFromDetailLink:self.linkMp3
@@ -132,6 +155,14 @@ BOOL isPaused;
     [self.timer invalidate];
     _timer = nil;
     
+    CABasicAnimation *rotate;
+    rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    rotate.fromValue = [NSNumber numberWithFloat:0];
+    rotate.toValue = [NSNumber numberWithFloat:((360*M_PI)/180)];
+    rotate.duration = 40;
+    rotate.repeatCount = 1e100;
+    [_imgPlay.layer addAnimation:rotate forKey:@"360"];
+    
     if(isPaused) {
         NSLog(@"Play");
         _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(getCurrentTimeAVPlayer) userInfo:nil repeats:YES];
@@ -139,6 +170,7 @@ BOOL isPaused;
         [self.btnPlayPause setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
         [self.player play];
         isPaused = false;
+        [_imgPlay.layer removeAnimationForKey:@"360"];
     } else {
         NSLog(@"Pause");
         [animationSpeakerImage stopAnimating];
