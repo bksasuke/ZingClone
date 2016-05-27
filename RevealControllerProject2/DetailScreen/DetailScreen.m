@@ -26,15 +26,6 @@
 
 @implementation DetailScreen
 
-
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
-    
-    
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,8 +33,13 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.title = NSLocalizedString(self.stringHeader, nil);
-    
-    
+  
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+     [self getPlaylist];
+      [self.tableView reloadData];
 }
 
 - (void) viewDidLayoutSubviews // Layout màn hình theo tỉ lệ 1:2
@@ -59,10 +55,10 @@
     
     [self.view addSubview:_image ];
     self.tableView.frame = CGRectMake(10, (self.view.bounds.size.height-20)/3+10, self.view.bounds.size.width-20, (self.view.bounds.size.height-20)*2/3);
-    [self getPlaylist];
     
 }
 -(void) getPlaylist{
+    arr_data = nil;
     [[NetworkManager shareManager] GetPlaylistFromLink:self.stringLinkDetail
                                             OnComplete:^(NSArray *items) {
                                                 arr_data = [[NSMutableArray alloc] initWithArray:items];
@@ -70,7 +66,7 @@
                                             } fail:^{
                                                 NSLog(@"loi");
                                             }];
-    
+
 }
 
 #pragma mark - Tableview configure

@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIView *imgPlay;
 @property (weak, nonatomic) IBOutlet UISlider *sliderShowCurrentTime;
 
-
 @property(nonatomic,strong) NSString *linkMp3;
 
 @end

@@ -49,14 +49,10 @@
         
         TFHppleElement * element1 = [element firstChildWithClassName:@"product-poster"];  // Lấy thẻ div co class là product-poster
         TFHppleElement * element2 = [element1 firstChildWithTagName:@"a"];
-        
-        
         NSString *linkDetail = [element2 objectForKey:@"href"];
-        
         TFHppleElement *element3 = [element2 firstChildWithTagName:@"img"];
         
         NSString *linkimage = [element3 objectForKey:@"src"];
-        
         TFHppleElement * element4 = [element firstChildWithClassName:@"product-info"]; //tạo node chứa thẻ prdoduct info
         TFHppleElement *element20 = [element4 firstChildWithClassName:@"product-name"];
         TFHppleElement *element21 = [element20 firstChildWithTagName:@"a"];
@@ -197,13 +193,9 @@
                                           options:NSDataReadingUncached
                                             error:&error];
     
-    
     if (error) { failMethod();}
     NSMutableArray * allItems = [NSMutableArray new];
-    
-    
-    
-    
+
     SMXMLDocument *document = [SMXMLDocument documentWithData:data error:&error];
     
     // check for errors

@@ -59,14 +59,7 @@
 {
     [super viewWillLayoutSubviews];
     [self loadHTML];
-    
-//    CGFloat statusNavigationBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.bounds.size.height;
-//    _image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zing2.png"]];
     _image.image = [UIImage imageNamed:@"zing2.png"];
-//    _image.frame = CGRectMake(10, statusNavigationBarHeight+10, self.view.bounds.size.width-20, (self.view.bounds.size.height-20)/3
-//                             );
-//   [self.tableView addSubview:_image ];
-//    self.tableView.frame = CGRectMake(10, (self.view.bounds.size.height-20)/3+10, self.view.bounds.size.width-20, (self.view.bounds.size.height-20)*2/3);
     
 }
 
@@ -137,9 +130,9 @@
     [self.navigationController pushViewController:self.detailScreen animated:YES];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 80;
+//}
 
 
 

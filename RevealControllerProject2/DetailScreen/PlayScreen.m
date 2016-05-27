@@ -62,9 +62,9 @@ BOOL isPaused;
 //    _sliderShowCurrentTime.selectedBarColor = [UIColor grayColor];
 //    _sliderShowCurrentTime.unselectedBarColor = [UIColor blackColor];
     
-    UIImage *minImage = [[UIImage imageNamed:@"slider-track-fill.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)];
-    UIImage *maxImage = [UIImage imageNamed:@"slider-track.png"];
-    UIImage *thumbImage = [UIImage imageNamed:@"slider-cap.png"];
+    UIImage *minImage = [[UIImage imageNamed:@"slider-track-fill=="] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)];
+    UIImage *maxImage = [UIImage imageNamed:@"slider-track"];
+    UIImage *thumbImage = [UIImage imageNamed:@"slider-cap"];
     
     
     [[UISlider appearance] setMaximumTrackImage:maxImage forState:UIControlStateNormal];
@@ -112,6 +112,21 @@ BOOL isPaused;
                                              selector:@selector(finishPlayer:)
                                                  name:AVPlayerItemDidPlayToEndTimeNotification
                                                object:self.player.currentItem];
+    
+    [self configSeesion];
+}
+
+- (void) configSeesion {
+    NSError *myErr;
+    // Initialize the AVAudioSession here.
+    if (![[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&myErr]) {
+        // Handle the error here.
+        //        NSLog(@"Audio Session error %@, %@", myErr, [myErr userInfo]);
+    }
+    else{
+        [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+        [self becomeFirstResponder];
+    }
 }
 
 /* Setup AVPlayer to play stream audio URL */
@@ -165,18 +180,24 @@ BOOL isPaused;
     
     if(isPaused) {
         NSLog(@"Play");
-        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(getCurrentTimeAVPlayer) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                  target:self
+                                                selector:@selector(getCurrentTimeAVPlayer)
+                                                userInfo:nil
+                                                 repeats:YES];
         [animationSpeakerImage startAnimating];
-        [self.btnPlayPause setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+        [self.btnPlayPause setImage:[UIImage imageNamed:@"pause"]
+                           forState:UIControlStateNormal];
         [self.player play];
         isPaused = false;
-        [_imgPlay.layer removeAnimationForKey:@"360"];
     } else {
         NSLog(@"Pause");
         [animationSpeakerImage stopAnimating];
-        [self.btnPlayPause setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        [self.btnPlayPause setImage:[UIImage imageNamed:@"play"]
+                           forState:UIControlStateNormal];
         [self.player pause];
         isPaused = true;
+        [_imgPlay.layer removeAnimationForKey:@"360"];
     }
     
 }
