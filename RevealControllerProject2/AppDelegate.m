@@ -30,10 +30,25 @@
 @interface AppDelegate()<SWRevealViewControllerDelegate>
 @end
 
+static AppDelegate *shareInstance = nil;
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+
++ ( AppDelegate*) sharedInstance
+{
+    if (nil != shareInstance) {
+        return shareInstance;
+    }
+    
+    static dispatch_once_t onceToken;
+    dispatch_once (&onceToken, ^{
+        shareInstance = [[ AppDelegate alloc] init];
+        
+    });
+    return shareInstance;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		046E275FB38F09D58C4B10A5535CBD21 /* Pods-ZingClone-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDF5D4DC4333AE65F29878C69A74A78 /* Pods-ZingClone-dummy.m */; };
+		0DDE97E80033B66CEBF80B3BCE030D9E /* ICGViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A7D0058830012DFD5259160BBF5D0D /* ICGViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F23475FD6F89A99F05D05BF1701633F /* ICGFlipAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B7EFC3F607552ACDA06AABE72746261 /* ICGFlipAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		333DCB4C52FE930DD2255DDA1E3631D7 /* ICGLayerAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 681A9AB0ED2EBC1D05C4D150952DAA77 /* ICGLayerAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		368F43A54DC8BF91BE9920D0B503AF3E /* ICGBaseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF558E69CFFCE1E045C88CD6C1AC523B /* ICGBaseAnimation.m */; };
+		41EEAB19CF4C9165394D2467B80A4FD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		4300A3277284B5BE371F15CC0EA5E011 /* ICGScaleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C93CA96A5FCD89F1BD9A9F9E48E4AE /* ICGScaleAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43760F735C878A8761F3A2FD9B030E9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		44BF924BB3EED93DF0E838603545D672 /* ICGSlideAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 337E12DA1C17195A8BF8FEA5265748B4 /* ICGSlideAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52934CAA3CD15895FA093BA19E92E2CC /* ICGFlipAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 894F0920423916FDC14D671C1DB57727 /* ICGFlipAnimation.m */; };
+		59CAE1A15CE31711C7C6C0E13F97539F /* ICGTransitionAnimation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8010E13C3C4EA7FD3EB067C973CD4B9 /* ICGTransitionAnimation-dummy.m */; };
+		769E057D5EB8AF3C52E228C7CBD4D574 /* ICGLayerAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DCB0F57C71001BF3E1E2636209CD60 /* ICGLayerAnimation.m */; };
+		83F67056F2353972A901EB12148F8248 /* ICGScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63675EB19882B7B367A0638F4E190468 /* ICGScaleAnimation.m */; };
+		8F1274A96B383082DF85F440929D0117 /* ICGBaseAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B86A4C9CC8A8F298D93B575283597E /* ICGBaseAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9742C078550797F4524FCB5EA3684CD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		A851621F7DBB5120468565A4DB16B90B /* ICGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 863E98C1A8190DC2314BB07E116367BA /* ICGNavigationController.m */; };
+		D1A2550537D7764F22E87E352FF45D92 /* ICGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1EB39DE37F49462DE2AD2FCCB0855F /* ICGViewController.m */; };
+		DAEAF9F8C540288A75DD23E63AC275D6 /* ICGSlideAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8586FCD3D802C8ECADF88C1576E40 /* ICGSlideAnimation.m */; };
+		EAC7F7281FF41F9B7067BE279E62163A /* ICGNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = FCC403B831AB7CB49454094B2B4F28F2 /* ICGNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6F77C8922EFB55B28CB976DDAA4E0A3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70D48B91520DB476844EA6991559F523;
+			remoteInfo = ICGTransitionAnimation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05A7D0058830012DFD5259160BBF5D0D /* ICGViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICGViewController.h; path = Source/ICGViewController.h; sourceTree = "<group>"; };
+		10B86A4C9CC8A8F298D93B575283597E /* ICGBaseAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICGBaseAnimation.h; path = Source/AnimationControllers/ICGBaseAnimation.h; sourceTree = "<group>"; };
+		31DCB0F57C71001BF3E1E2636209CD60 /* ICGLayerAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ICGLayerAnimation.m; path = Source/AnimationControllers/ICGLayerAnimation.m; sourceTree = "<group>"; };
+		337E12DA1C17195A8BF8FEA5265748B4 /* ICGSlideAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICGSlideAnimation.h; path = Source/AnimationControllers/ICGSlideAnimation.h; sourceTree = "<group>"; };
+		3455B059CFBB253932C3B4D9B6AEAF19 /* libPods-ZingClone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZingClone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35268908E523B4286818AC35F29C4DE6 /* libICGTransitionAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libICGTransitionAnimation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		56C93CA96A5FCD89F1BD9A9F9E48E4AE /* ICGScaleAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICGScaleAnimation.h; path = Source/AnimationControllers/ICGScaleAnimation.h; sourceTree = "<group>"; };
+		57B8586FCD3D802C8ECADF88C1576E40 /* ICGSlideAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ICGSlideAnimation.m; path = Source/AnimationControllers/ICGSlideAnimation.m; sourceTree = "<group>"; };
+		63675EB19882B7B367A0638F4E190468 /* ICGScaleAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ICGScaleAnimation.m; path = Source/AnimationControllers/ICGScaleAnimation.m; sourceTree = "<group>"; };
+		681A9AB0ED2EBC1D05C4D150952DAA77 /* ICGLayerAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICGLayerAnimation.h; path = Source/AnimationControllers/ICGLayerAnimation.h; sourceTree = "<group>"; };
+		77A53A84D236BB62FFCC064672D69A97 /* Pods-ZingClone-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZingClone-frameworks.sh"; sourceTree = "<group>"; };
+		863E98C1A8190DC2314BB07E116367BA /* ICGNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ICGNavigationController.m; path = Source/ICGNavigationController.m; sourceTree = "<group>"; };
+		894F0920423916FDC14D671C1DB57727 /* ICGFlipAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ICGFlipAnimation.m; path = Source/AnimationControllers/ICGFlipAnimation.m; sourceTree = "<group>"; };
+		8B7EFC3F607552ACDA06AABE72746261 /* ICGFlipAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICGFlipAnimation.h; path = Source/AnimationControllers/ICGFlipAnimation.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D1EB39DE37F49462DE2AD2FCCB0855F /* ICGViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ICGViewController.m; path = Source/ICGViewController.m; sourceTree = "<group>"; };
+		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A8010E13C3C4EA7FD3EB067C973CD4B9 /* ICGTransitionAnimation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ICGTransitionAnimation-dummy.m"; sourceTree = "<group>"; };
+		A98DD4A0D042DC0C23DA244DFAA799AD /* Pods-ZingClone-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZingClone-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B1A744B7C3B7AC532EDE7D88BB1E6A80 /* ICGTransitionAnimation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ICGTransitionAnimation-prefix.pch"; sourceTree = "<group>"; };
+		B1AADCF2BA45C2FCD6D02999C75F2F45 /* ICGTransitionAnimation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ICGTransitionAnimation.xcconfig; sourceTree = "<group>"; };
+		BFDF5D4DC4333AE65F29878C69A74A78 /* Pods-ZingClone-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZingClone-dummy.m"; sourceTree = "<group>"; };
+		C80A5630A988A8463A6C6C8C8A595EF8 /* Pods-ZingClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZingClone.debug.xcconfig"; sourceTree = "<group>"; };
+		CCB3691DB63900D6E6AF0E06297D7DB9 /* Pods-ZingClone-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZingClone-resources.sh"; sourceTree = "<group>"; };
+		DDEC58D96CBCAB8EB3E2A3DFBFA4306C /* Pods-ZingClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZingClone.release.xcconfig"; sourceTree = "<group>"; };
+		DF558E69CFFCE1E045C88CD6C1AC523B /* ICGBaseAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ICGBaseAnimation.m; path = Source/AnimationControllers/ICGBaseAnimation.m; sourceTree = "<group>"; };
+		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		FCC403B831AB7CB49454094B2B4F28F2 /* ICGNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICGNavigationController.h; path = Source/ICGNavigationController.h; sourceTree = "<group>"; };
+		FD50353C8371685B4319A1D7D21E9CCD /* Pods-ZingClone-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZingClone-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0CC3234359CE24ADE33E5AA7D1EDD318 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9742C078550797F4524FCB5EA3684CD9 /* Foundation.framework in Frameworks */,
+				41EEAB19CF4C9165394D2467B80A4FD6 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E130656F1B1C4389FA97CBB580CA2638 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43760F735C878A8761F3A2FD9B030E9C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11D0DA78853A2AF99CBA21E2324B4C8C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2529316147044FB81DC38939BC4955BF /* Pods-ZingClone */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2529316147044FB81DC38939BC4955BF /* Pods-ZingClone */ = {
+			isa = PBXGroup;
+			children = (
+				A98DD4A0D042DC0C23DA244DFAA799AD /* Pods-ZingClone-acknowledgements.markdown */,
+				FD50353C8371685B4319A1D7D21E9CCD /* Pods-ZingClone-acknowledgements.plist */,
+				BFDF5D4DC4333AE65F29878C69A74A78 /* Pods-ZingClone-dummy.m */,
+				77A53A84D236BB62FFCC064672D69A97 /* Pods-ZingClone-frameworks.sh */,
+				CCB3691DB63900D6E6AF0E06297D7DB9 /* Pods-ZingClone-resources.sh */,
+				C80A5630A988A8463A6C6C8C8A595EF8 /* Pods-ZingClone.debug.xcconfig */,
+				DDEC58D96CBCAB8EB3E2A3DFBFA4306C /* Pods-ZingClone.release.xcconfig */,
+			);
+			name = "Pods-ZingClone";
+			path = "Target Support Files/Pods-ZingClone";
+			sourceTree = "<group>";
+		};
+		25D2D82570A60557D7DE26E5F9A21495 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74F399ABA8EA3142D74FCA89AEA1839F /* ICGTransitionAnimation */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74F399ABA8EA3142D74FCA89AEA1839F /* ICGTransitionAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				10B86A4C9CC8A8F298D93B575283597E /* ICGBaseAnimation.h */,
+				DF558E69CFFCE1E045C88CD6C1AC523B /* ICGBaseAnimation.m */,
+				8B7EFC3F607552ACDA06AABE72746261 /* ICGFlipAnimation.h */,
+				894F0920423916FDC14D671C1DB57727 /* ICGFlipAnimation.m */,
+				681A9AB0ED2EBC1D05C4D150952DAA77 /* ICGLayerAnimation.h */,
+				31DCB0F57C71001BF3E1E2636209CD60 /* ICGLayerAnimation.m */,
+				FCC403B831AB7CB49454094B2B4F28F2 /* ICGNavigationController.h */,
+				863E98C1A8190DC2314BB07E116367BA /* ICGNavigationController.m */,
+				56C93CA96A5FCD89F1BD9A9F9E48E4AE /* ICGScaleAnimation.h */,
+				63675EB19882B7B367A0638F4E190468 /* ICGScaleAnimation.m */,
+				337E12DA1C17195A8BF8FEA5265748B4 /* ICGSlideAnimation.h */,
+				57B8586FCD3D802C8ECADF88C1576E40 /* ICGSlideAnimation.m */,
+				05A7D0058830012DFD5259160BBF5D0D /* ICGViewController.h */,
+				9D1EB39DE37F49462DE2AD2FCCB0855F /* ICGViewController.m */,
+				F192F72776C0CB404AFC0BBA251317F5 /* Support Files */,
+			);
+			path = ICGTransitionAnimation;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				25D2D82570A60557D7DE26E5F9A21495 /* Pods */,
+				AB690784F260D27F4C03D7C76E32F3F7 /* Products */,
+				11D0DA78853A2AF99CBA21E2324B4C8C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		AB690784F260D27F4C03D7C76E32F3F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35268908E523B4286818AC35F29C4DE6 /* libICGTransitionAnimation.a */,
+				3455B059CFBB253932C3B4D9B6AEAF19 /* libPods-ZingClone.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F192F72776C0CB404AFC0BBA251317F5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1AADCF2BA45C2FCD6D02999C75F2F45 /* ICGTransitionAnimation.xcconfig */,
+				A8010E13C3C4EA7FD3EB067C973CD4B9 /* ICGTransitionAnimation-dummy.m */,
+				B1A744B7C3B7AC532EDE7D88BB1E6A80 /* ICGTransitionAnimation-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ICGTransitionAnimation";
+			sourceTree = "<group>";
+		};
+		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
+				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		843E65BF9043F3C520FBDF53EAFBB497 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F1274A96B383082DF85F440929D0117 /* ICGBaseAnimation.h in Headers */,
+				1F23475FD6F89A99F05D05BF1701633F /* ICGFlipAnimation.h in Headers */,
+				333DCB4C52FE930DD2255DDA1E3631D7 /* ICGLayerAnimation.h in Headers */,
+				EAC7F7281FF41F9B7067BE279E62163A /* ICGNavigationController.h in Headers */,
+				4300A3277284B5BE371F15CC0EA5E011 /* ICGScaleAnimation.h in Headers */,
+				44BF924BB3EED93DF0E838603545D672 /* ICGSlideAnimation.h in Headers */,
+				0DDE97E80033B66CEBF80B3BCE030D9E /* ICGViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0719894A2C1ECB44A0B20DBBA70D895D /* Pods-ZingClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A390D5F84338718907C0F4ADC0FA6B70 /* Build configuration list for PBXNativeTarget "Pods-ZingClone" */;
+			buildPhases = (
+				2E393E71DCED458FEE44DF0254846A00 /* Sources */,
+				E130656F1B1C4389FA97CBB580CA2638 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2B50B8B00E9A64C1AB6B44B45CBAADB /* PBXTargetDependency */,
+			);
+			name = "Pods-ZingClone";
+			productName = "Pods-ZingClone";
+			productReference = 3455B059CFBB253932C3B4D9B6AEAF19 /* libPods-ZingClone.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		70D48B91520DB476844EA6991559F523 /* ICGTransitionAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD4392B7C71E0614CF7DCE709B0AA375 /* Build configuration list for PBXNativeTarget "ICGTransitionAnimation" */;
+			buildPhases = (
+				F694DE549A795BAA6A074D8E8DFC44F6 /* Sources */,
+				0CC3234359CE24ADE33E5AA7D1EDD318 /* Frameworks */,
+				843E65BF9043F3C520FBDF53EAFBB497 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ICGTransitionAnimation;
+			productName = ICGTransitionAnimation;
+			productReference = 35268908E523B4286818AC35F29C4DE6 /* libICGTransitionAnimation.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = AB690784F260D27F4C03D7C76E32F3F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70D48B91520DB476844EA6991559F523 /* ICGTransitionAnimation */,
+				0719894A2C1ECB44A0B20DBBA70D895D /* Pods-ZingClone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E393E71DCED458FEE44DF0254846A00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046E275FB38F09D58C4B10A5535CBD21 /* Pods-ZingClone-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F694DE549A795BAA6A074D8E8DFC44F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				368F43A54DC8BF91BE9920D0B503AF3E /* ICGBaseAnimation.m in Sources */,
+				52934CAA3CD15895FA093BA19E92E2CC /* ICGFlipAnimation.m in Sources */,
+				769E057D5EB8AF3C52E228C7CBD4D574 /* ICGLayerAnimation.m in Sources */,
+				A851621F7DBB5120468565A4DB16B90B /* ICGNavigationController.m in Sources */,
+				83F67056F2353972A901EB12148F8248 /* ICGScaleAnimation.m in Sources */,
+				DAEAF9F8C540288A75DD23E63AC275D6 /* ICGSlideAnimation.m in Sources */,
+				59CAE1A15CE31711C7C6C0E13F97539F /* ICGTransitionAnimation-dummy.m in Sources */,
+				D1A2550537D7764F22E87E352FF45D92 /* ICGViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2B50B8B00E9A64C1AB6B44B45CBAADB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ICGTransitionAnimation;
+			target = 70D48B91520DB476844EA6991559F523 /* ICGTransitionAnimation */;
+			targetProxy = 6F77C8922EFB55B28CB976DDAA4E0A3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0610B4B0B2C8A2BB6126B9AD056A8591 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1AADCF2BA45C2FCD6D02999C75F2F45 /* ICGTransitionAnimation.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ICGTransitionAnimation/ICGTransitionAnimation-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3FA2475660FFC880302AD18E29B2E5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		41319929B39B29D782C0FD3327E60DDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C80A5630A988A8463A6C6C8C8A595EF8 /* Pods-ZingClone.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4633E7FCD682D4BC856A5A62BC0BA762 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDEC58D96CBCAB8EB3E2A3DFBFA4306C /* Pods-ZingClone.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AE18AA2B10E9061E488185B9436F0F6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1AADCF2BA45C2FCD6D02999C75F2F45 /* ICGTransitionAnimation.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ICGTransitionAnimation/ICGTransitionAnimation-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F325026B55060D3B22BEC0BAB5FA7344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA2475660FFC880302AD18E29B2E5FC /* Debug */,
+				F325026B55060D3B22BEC0BAB5FA7344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A390D5F84338718907C0F4ADC0FA6B70 /* Build configuration list for PBXNativeTarget "Pods-ZingClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41319929B39B29D782C0FD3327E60DDC /* Debug */,
+				4633E7FCD682D4BC856A5A62BC0BA762 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD4392B7C71E0614CF7DCE709B0AA375 /* Build configuration list for PBXNativeTarget "ICGTransitionAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0610B4B0B2C8A2BB6126B9AD056A8591 /* Debug */,
+				AE18AA2B10E9061E488185B9436F0F6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

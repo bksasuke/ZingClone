@@ -19,6 +19,7 @@
 		5E605BAC14A081F900853025 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E605BAB14A081F900853025 /* Foundation.framework */; };
 		5E605BAE14A081F900853025 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E605BAD14A081F900853025 /* CoreGraphics.framework */; };
 		5E605BB414A081F900853025 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E605BB214A081F900853025 /* InfoPlist.strings */; };
+		6B873876DB05CEB20F9B06CB /* libPods-ZingClone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D7939AA5C74AAC9DDCF8E3 /* libPods-ZingClone.a */; };
 		9301FEF21C2932F2002EA38C /* DetailScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9301FEF01C2932F2002EA38C /* DetailScreen.m */; };
 		9301FEF31C2932F2002EA38C /* DetailScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9301FEF11C2932F2002EA38C /* DetailScreen.xib */; };
 		930F21A61C216B920089A8CC /* DataItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 930F21A51C216B920089A8CC /* DataItems.m */; };
@@ -111,6 +112,7 @@
 		5E605BB314A081F900853025 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E605BB714A081F900853025 /* Project-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-Prefix.pch"; sourceTree = "<group>"; };
 		5E605BB814A081F900853025 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		74D7939AA5C74AAC9DDCF8E3 /* libPods-ZingClone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZingClone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9301FEEF1C2932F2002EA38C /* DetailScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailScreen.h; path = DetailScreen/DetailScreen.h; sourceTree = "<group>"; };
 		9301FEF01C2932F2002EA38C /* DetailScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailScreen.m; path = DetailScreen/DetailScreen.m; sourceTree = "<group>"; };
 		9301FEF11C2932F2002EA38C /* DetailScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailScreen.xib; path = DetailScreen/DetailScreen.xib; sourceTree = "<group>"; };
@@ -198,6 +200,8 @@
 		BABDAAD41CE323EB00B3489A /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		BABDAAD51CE323EB00B3489A /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		BABDAAD61CE323EB00B3489A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F086921AD02A2883D12FA59F /* Pods-ZingClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZingClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZingClone/Pods-ZingClone.release.xcconfig"; sourceTree = "<group>"; };
+		F45ED439FD5DA57BEC4285BA /* Pods-ZingClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZingClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZingClone/Pods-ZingClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 				5E605BAA14A081F900853025 /* UIKit.framework in Frameworks */,
 				5E605BAC14A081F900853025 /* Foundation.framework in Frameworks */,
 				5E605BAE14A081F900853025 /* CoreGraphics.framework in Frameworks */,
+				6B873876DB05CEB20F9B06CB /* libPods-ZingClone.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +265,7 @@
 				5E605BAF14A081F900853025 /* ZingClone */,
 				5E605BA814A081F900853025 /* Frameworks */,
 				5E605BA614A081F900853025 /* Products */,
+				6933AB6C8A1FBAEDE5331D43 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -280,6 +286,7 @@
 				5E605BA914A081F900853025 /* UIKit.framework */,
 				5E605BAB14A081F900853025 /* Foundation.framework */,
 				5E605BAD14A081F900853025 /* CoreGraphics.framework */,
+				74D7939AA5C74AAC9DDCF8E3 /* libPods-ZingClone.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,6 +321,15 @@
 				4EDE1D10168F06E3005656D1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6933AB6C8A1FBAEDE5331D43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F45ED439FD5DA57BEC4285BA /* Pods-ZingClone.debug.xcconfig */,
+				F086921AD02A2883D12FA59F /* Pods-ZingClone.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9333E59A1C23C0BE0098E50E /* Library */ = {
@@ -499,9 +515,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E605BC614A081F900853025 /* Build configuration list for PBXNativeTarget "ZingClone" */;
 			buildPhases = (
+				E8C233E16F7C38C9742007E0 /* 📦 Check Pods Manifest.lock */,
 				5E605BA114A081F900853025 /* Sources */,
 				5E605BA214A081F900853025 /* Frameworks */,
 				5E605BA314A081F900853025 /* Resources */,
+				15DE80546F365D296202F1BF /* 📦 Embed Pods Frameworks */,
+				B5007A6F809964EA0416951F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -610,6 +629,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15DE80546F365D296202F1BF /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZingClone/Pods-ZingClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5007A6F809964EA0416951F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZingClone/Pods-ZingClone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8C233E16F7C38C9742007E0 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E605BA114A081F900853025 /* Sources */ = {
@@ -744,6 +811,7 @@
 		};
 		5E605BC714A081F900853025 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F45ED439FD5DA57BEC4285BA /* Pods-ZingClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -764,6 +832,7 @@
 		};
 		5E605BC814A081F900853025 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F086921AD02A2883D12FA59F /* Pods-ZingClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";

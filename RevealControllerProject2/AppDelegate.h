@@ -23,12 +23,14 @@
 */
 
 #import <UIKit/UIKit.h>
-
+#import <Foundation/Foundation.h>
 @class SWRevealViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) SWRevealViewController *viewController;
+
++ (AppDelegate *) sharedInstance;
 
 @end

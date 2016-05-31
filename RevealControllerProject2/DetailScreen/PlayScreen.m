@@ -29,6 +29,7 @@
 
 @implementation PlayScreen {
     NSString *stringLinkPlay;
+     CABasicAnimation *rotate;
 }
 
 UIImageView *animationSpeakerImage;
@@ -47,25 +48,36 @@ BOOL isPaused;
     [self enableButtonPlayStopSlider:NO];
     [self setRotateImage];
 }
+- (void ) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    if (_player ) {
+        
+    }
+
+}
 
 - ( void) setRotateImage{
     
+    rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    rotate.fromValue = [NSNumber numberWithFloat:0];
+    rotate.toValue = [NSNumber numberWithFloat:((360*M_PI)/180)];
+    rotate.duration = 40;
+    rotate.repeatCount = 1e100;
+    
     _imgPlay.layer.cornerRadius = _imgPlay.frame.size.width/2;
     UIGraphicsBeginImageContext(self.view.frame.size);
-//    [[UIImage imageNamed:@"image.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.strImage]];
     image = [UIImage imageWithData:data];
     _imgPlay.backgroundColor = [UIColor colorWithPatternImage:image];
-//    _sliderShowCurrentTime.markColor = [UIColor colorWithWhite:1 alpha:0.5];
-//    _sliderShowCurrentTime.selectedBarColor = [UIColor grayColor];
-//    _sliderShowCurrentTime.unselectedBarColor = [UIColor blackColor];
     
-    UIImage *minImage = [[UIImage imageNamed:@"slider-track-fill=="] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)];
+// Replace default slider
+    
+    UIImage *minImage = [[UIImage imageNamed:@"slider-track-fill=="]
+                         resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)];
     UIImage *maxImage = [UIImage imageNamed:@"slider-track"];
     UIImage *thumbImage = [UIImage imageNamed:@"slider-cap"];
-    
     
     [[UISlider appearance] setMaximumTrackImage:maxImage forState:UIControlStateNormal];
     [[UISlider appearance] setMinimumTrackImage:minImage forState:UIControlStateNormal];
@@ -83,7 +95,7 @@ BOOL isPaused;
                                              }];
     
 }
--(void) getMp3 { //step 2: Trả về các đối tượng có link MP3
+-(void) getMp3 { //step 2: Trả về các đối tượng có link MP3 tu cac doi tuong xml
     [[NetworkManager shareManager] GetMp3FromXml:self.arr_data[0]
                                       OnComplete:^(NSArray *item2s) {
                                           self.arr_data2 = [[NSMutableArray alloc] initWithArray:item2s];
@@ -133,7 +145,6 @@ BOOL isPaused;
 - (void)setupAVPlayerWithURL: (NSString*)stringURL {
     NSURL *url = [NSURL URLWithString:stringURL];
     self.player = [[AVPlayer alloc] initWithURL:url];
-    
     self.sliderShowCurrentTime.value = 0.0;
     self.sliderShowCurrentTime.maximumValue = CMTimeGetSeconds(self.player.currentItem.asset.duration);
     
@@ -141,8 +152,10 @@ BOOL isPaused;
     self.labelTimeDuration.text = [NSString stringWithFormat:@"-%@", [self timeFormat:CMTimeGetSeconds(self.player.currentItem.asset.duration)]];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
-                        change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context {
     
     if (object == self.player.currentItem && [keyPath isEqualToString:@"status"]) {
         if (self.player.currentItem.status == AVPlayerItemStatusReadyToPlay) {
@@ -151,6 +164,18 @@ BOOL isPaused;
             [activityView stopAnimating];
             [self enableButtonPlayStopSlider:YES];
             [self.player play];
+            _timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                      target:self
+                                                    selector:@selector(getCurrentTimeAVPlayer)
+                                                    userInfo:nil
+                                                     repeats:YES];
+            [_imgPlay.layer addAnimation:rotate forKey:@"360"];
+            [animationSpeakerImage startAnimating];
+            [self.btnPlayPause setImage:[UIImage imageNamed:@"pause"]
+                               forState:UIControlStateNormal];
+            [self.player play];
+            isPaused = false;
+            
             
         }
         else if (self.player.currentItem.status == AVPlayerItemStatusFailed) {
@@ -169,13 +194,13 @@ BOOL isPaused;
 - (IBAction)btnPlayPause:(id)sender {
     [self.timer invalidate];
     _timer = nil;
-    
-    CABasicAnimation *rotate;
-    rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    rotate.fromValue = [NSNumber numberWithFloat:0];
-    rotate.toValue = [NSNumber numberWithFloat:((360*M_PI)/180)];
-    rotate.duration = 40;
-    rotate.repeatCount = 1e100;
+//    
+//    CABasicAnimation *rotate;
+//    rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+//    rotate.fromValue = [NSNumber numberWithFloat:0];
+//    rotate.toValue = [NSNumber numberWithFloat:((360*M_PI)/180)];
+//    rotate.duration = 40;
+//    rotate.repeatCount = 1e100;
     [_imgPlay.layer addAnimation:rotate forKey:@"360"];
     
     if(isPaused) {
@@ -295,7 +320,8 @@ BOOL isPaused;
 - (void)finishPlayer: (NSNotification*)notification {
     [_timer invalidate];
     _timer = nil;
-    [self.btnPlayPause setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+    [self.btnPlayPause setImage:[UIImage imageNamed:@"play"]
+                       forState:UIControlStateNormal];
     NSLog(@"Finish");
     
     [animationSpeakerImage stopAnimating];
@@ -312,7 +338,8 @@ BOOL isPaused;
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:AVPlayerItemDidPlayToEndTimeNotification
                                                   object:self.player.currentItem];
-    [self.player.currentItem removeObserver:self forKeyPath:@"status"];
+    [self.player.currentItem removeObserver:self
+                                 forKeyPath:@"status"];
 }
 
 

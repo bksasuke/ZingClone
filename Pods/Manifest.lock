@@ -1,0 +1,12 @@
+PODS:
+  - ICGTransitionAnimation (1.02)
+
+DEPENDENCIES:
+  - ICGTransitionAnimation (~> 1.02)
+
+SPEC CHECKSUMS:
+  ICGTransitionAnimation: 6b3e69591cb02400071fb8f7a79cb3324d7259da
+
+PODFILE CHECKSUM: defb8c0bf24e638e7d7b0c9ef76b182374013857
+
+COCOAPODS: 1.0.0
