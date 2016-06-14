@@ -85,7 +85,7 @@
 }
 
 
-#pragma marl - UITableView Data Source
+#pragma mark - UITableView Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

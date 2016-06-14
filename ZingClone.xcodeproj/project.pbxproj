@@ -57,6 +57,7 @@
 		93FF7C431C215E4100E3B36D /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FF7C421C215E4100E3B36D /* DataItem.m */; };
 		93FF7C4A1C215E7700E3B36D /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FF7C481C215E7700E3B36D /* CustomCell.m */; };
 		93FF7C4B1C215E7700E3B36D /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93FF7C491C215E7700E3B36D /* CustomCell.xib */; };
+		BA1BAB071D0EB8650051ED25 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1BAB061D0EB8650051ED25 /* AppController.m */; };
 		BA45FFDA1CE97DDF0066523F /* JMMarkSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = BA45FFD91CE97DDF0066523F /* JMMarkSlider.m */; };
 		BA45FFE11CE9821A0066523F /* slider-cap.png in Resources */ = {isa = PBXBuildFile; fileRef = BA45FFDB1CE9821A0066523F /* slider-cap.png */; };
 		BA45FFE21CE9821A0066523F /* slider-cap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA45FFDC1CE9821A0066523F /* slider-cap@2x.png */; };
@@ -92,6 +93,7 @@
 		BABDAAEA1CE323EB00B3489A /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = BABDAAD41CE323EB00B3489A /* iTunesArtwork.png */; };
 		BABDAAEB1CE323EB00B3489A /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BABDAAD51CE323EB00B3489A /* iTunesArtwork@2x.png */; };
 		BABDAAEC1CE323EB00B3489A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = BABDAAD61CE323EB00B3489A /* README.md */; };
+		BAC2A83A1D0560CB0010392C /* PlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC2A8391D0560CB0010392C /* PlayView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +166,8 @@
 		93FF7C471C215E7700E3B36D /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		93FF7C481C215E7700E3B36D /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		93FF7C491C215E7700E3B36D /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		BA1BAB051D0EB8650051ED25 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = DetailScreen/AppController.h; sourceTree = "<group>"; };
+		BA1BAB061D0EB8650051ED25 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = DetailScreen/AppController.m; sourceTree = "<group>"; };
 		BA45FFD81CE97DDF0066523F /* JMMarkSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMarkSlider.h; sourceTree = "<group>"; };
 		BA45FFD91CE97DDF0066523F /* JMMarkSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMarkSlider.m; sourceTree = "<group>"; };
 		BA45FFDB1CE9821A0066523F /* slider-cap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-cap.png"; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 		BABDAAD41CE323EB00B3489A /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		BABDAAD51CE323EB00B3489A /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		BABDAAD61CE323EB00B3489A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BAC2A8381D0560CB0010392C /* PlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayView.h; sourceTree = "<group>"; };
+		BAC2A8391D0560CB0010392C /* PlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayView.m; sourceTree = "<group>"; };
 		F086921AD02A2883D12FA59F /* Pods-ZingClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZingClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZingClone/Pods-ZingClone.release.xcconfig"; sourceTree = "<group>"; };
 		F45ED439FD5DA57BEC4285BA /* Pods-ZingClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZingClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZingClone/Pods-ZingClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +251,7 @@
 				9343F8581C226D0900A5B283 /* FrontViewController.h */,
 				9343F8591C226D0900A5B283 /* FrontViewController.m */,
 				9343F85A1C226D0900A5B283 /* FrontViewController.xib */,
+				BAC2A8341D05607E0010392C /* RemoteView */,
 			);
 			name = "MainViewController(Front)";
 			sourceTree = "<group>";
@@ -319,6 +326,8 @@
 				5E605BB714A081F900853025 /* Project-Prefix.pch */,
 				4EDE1D0E168F06D6005656D1 /* Default-568h@2x.png */,
 				4EDE1D10168F06E3005656D1 /* main.m */,
+				BA1BAB051D0EB8650051ED25 /* AppController.h */,
+				BA1BAB061D0EB8650051ED25 /* AppController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -508,6 +517,15 @@
 			path = AppIcon.appiconset;
 			sourceTree = "<group>";
 		};
+		BAC2A8341D05607E0010392C /* RemoteView */ = {
+			isa = PBXGroup;
+			children = (
+				BAC2A8381D0560CB0010392C /* PlayView.h */,
+				BAC2A8391D0560CB0010392C /* PlayView.m */,
+			);
+			path = RemoteView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -687,6 +705,7 @@
 				4EDE1D03168F0648005656D1 /* AppDelegate.m in Sources */,
 				937776C11C22BE10009E3E04 /* PhimObj.m in Sources */,
 				9343F85B1C226D0900A5B283 /* FrontViewController.m in Sources */,
+				BA1BAB071D0EB8650051ED25 /* AppController.m in Sources */,
 				4EDE1D11168F06E3005656D1 /* main.m in Sources */,
 				93FF7C4A1C215E7700E3B36D /* CustomCell.m in Sources */,
 				BABDAAEC1CE323EB00B3489A /* README.md in Sources */,
@@ -697,6 +716,7 @@
 				9333E5A01C23C1370098E50E /* SWRevealViewController.m in Sources */,
 				93FF7C431C215E4100E3B36D /* DataItem.m in Sources */,
 				9301FEF21C2932F2002EA38C /* DetailScreen.m in Sources */,
+				BAC2A83A1D0560CB0010392C /* PlayView.m in Sources */,
 				937776BC1C22BDF1009E3E04 /* TFHpple.m in Sources */,
 				937776C51C22BE3F009E3E04 /* NetworkManager.m in Sources */,
 				930F21A61C216B920089A8CC /* DataItems.m in Sources */,

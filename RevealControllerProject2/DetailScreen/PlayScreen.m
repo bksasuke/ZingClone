@@ -17,7 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTimeElapsed;
 @property (weak, nonatomic) IBOutlet UILabel *labelTimeDuration;
-//@property (weak, nonatomic) IBOutlet UISlider *sliderShowCurrentTime;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlayPause;
 @property (weak, nonatomic) IBOutlet UIButton *btnStop;
 
@@ -29,7 +28,7 @@
 
 @implementation PlayScreen {
     NSString *stringLinkPlay;
-     CABasicAnimation *rotate;
+    CABasicAnimation *rotate;
 }
 
 UIImageView *animationSpeakerImage;
@@ -38,22 +37,32 @@ BOOL isPaused;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+
     
     [self.view reloadInputViews];
-    [self getXml];
-    [self getMp3];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"haveMusic"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
-    //    [self createAnimationSpeakerImage];
-    [self createActivityIndicatorView];
-    [self enableButtonPlayStopSlider:NO];
-    [self setRotateImage];
+    
 }
 - (void ) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    if (_player ) {
+    if (_linkMp3) {
+        if (_linkMp3 == _currentLinkMp3 ) {
+        }
+        [self setUpandPlay];
+        [self configSeesion];
         
     }
-
+}
+- ( void) setUpandPlay {
+    [self getXml];
+    [self getMp3];
+    [self createActivityIndicatorView];
+    [self enableButtonPlayStopSlider:NO];
+    [self setRotateImage];
+    
 }
 
 - ( void) setRotateImage{
@@ -72,7 +81,7 @@ BOOL isPaused;
     image = [UIImage imageWithData:data];
     _imgPlay.backgroundColor = [UIColor colorWithPatternImage:image];
     
-// Replace default slider
+    // Replace default slider
     
     UIImage *minImage = [[UIImage imageNamed:@"slider-track-fill=="]
                          resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)];
@@ -93,6 +102,7 @@ BOOL isPaused;
                                              } fail:^{
                                                  NSLog(@"loi");
                                              }];
+    _currentLinkMp3 = _linkMp3;
     
 }
 -(void) getMp3 { //step 2: Trả về các đối tượng có link MP3 tu cac doi tuong xml
@@ -103,11 +113,14 @@ BOOL isPaused;
                                           PhimObj *song; // Tạm thời đặt hàm play nhạc ở đây vì chưa đưa biến trả về ra global đc.
                                           song = self.arr_data2[0];
                                           stringLinkPlay = song.tenPhim;
-                                          [self setupAVPlayerWithURL:stringLinkPlay];
-                                          [self.player.currentItem addObserver:self forKeyPath:@"status"
-                                                                       options:NSKeyValueObservingOptionNew
-                                                                       context:nil];
-                                          
+                                          if (stringLinkPlay) {
+                                              [self.player pause];
+                                              [self setupAVPlayerWithURL:stringLinkPlay];
+                                              [self.player.currentItem addObserver:self forKeyPath:@"status"
+                                                                           options:NSKeyValueObservingOptionNew
+                                                                           context:nil]; }
+                                          [[NSUserDefaults standardUserDefaults] setObject:stringLinkPlay   forKey:@"currentLink"];
+                                          [[NSUserDefaults standardUserDefaults] synchronize];
                                       } fail:^{
                                           NSLog(@"loi");
                                       }];
@@ -144,12 +157,18 @@ BOOL isPaused;
 /* Setup AVPlayer to play stream audio URL */
 - (void)setupAVPlayerWithURL: (NSString*)stringURL {
     NSURL *url = [NSURL URLWithString:stringURL];
+    if (_player != nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification
+                                                      object:self.player.currentItem];
+        [self.player.currentItem removeObserver:self forKeyPath:@"status"];
+    }
     self.player = [[AVPlayer alloc] initWithURL:url];
     self.sliderShowCurrentTime.value = 0.0;
     self.sliderShowCurrentTime.maximumValue = CMTimeGetSeconds(self.player.currentItem.asset.duration);
     
     self.labelTimeElapsed.text = @"0:00";
     self.labelTimeDuration.text = [NSString stringWithFormat:@"-%@", [self timeFormat:CMTimeGetSeconds(self.player.currentItem.asset.duration)]];
+    //    [_player addObserver:self forKeyPath:@"status" options:0 context:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -194,13 +213,13 @@ BOOL isPaused;
 - (IBAction)btnPlayPause:(id)sender {
     [self.timer invalidate];
     _timer = nil;
-//    
-//    CABasicAnimation *rotate;
-//    rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-//    rotate.fromValue = [NSNumber numberWithFloat:0];
-//    rotate.toValue = [NSNumber numberWithFloat:((360*M_PI)/180)];
-//    rotate.duration = 40;
-//    rotate.repeatCount = 1e100;
+    //
+    //    CABasicAnimation *rotate;
+    //    rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    //    rotate.fromValue = [NSNumber numberWithFloat:0];
+    //    rotate.toValue = [NSNumber numberWithFloat:((360*M_PI)/180)];
+    //    rotate.duration = 40;
+    //    rotate.repeatCount = 1e100;
     [_imgPlay.layer addAnimation:rotate forKey:@"360"];
     
     if(isPaused) {
@@ -342,6 +361,9 @@ BOOL isPaused;
                                  forKeyPath:@"status"];
 }
 
+- (IBAction)btnHideplay:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
 

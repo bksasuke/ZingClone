@@ -11,4 +11,6 @@
 @interface FrontViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSString *linkFrontView, *titleHeader;
+@property (weak, nonatomic) IBOutlet UIView *playView;
+
 @end

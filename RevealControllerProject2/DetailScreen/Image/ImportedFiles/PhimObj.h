@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString * thoiLuong;
 @property (nonatomic, strong) NSString * khoiChieu;
 @property (nonatomic, strong) NSString * linkChitiet;
+@property (nonatomic, strong) UIImage *thumbNail;
 @property (nonatomic, strong) NSString * linkAnh;
 -(id) initWithName:(NSString *) name
           catelogy:(NSString *) catelogy
